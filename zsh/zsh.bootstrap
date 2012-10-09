@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Bail out if we don't have git installed
+command -v git >/dev/null 2>&1 || { echo >&2 "Seriously? We need git installed matey to check out oh-my-zsh.  Aborting."; exit 1; }
+
+if [ -d ~/.oh-my-zsh ] ; then
+  echo -e "\033[36m=> ~\.oh-my-zsh already exists...overwrite? (y/n)\033[0m";
+  read answer
+  if [ "$answer" == "y" ] ; then
+    echo -e "\033[31m=>  Deleting ~\.oh-my-zsh\033[0m";
+    rm -rf ~/.oh-my-zsh
+    `which git` clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    echo  -e "\033[32m=> Oh my! oh-my-zsh is installed!\033[0m";
+  else
+    echo -e "\033[36m=> Using and assuming ~/.oh-my-zsh is correct, continuing on...\033[0m";
+  fi
+else
+  `which git` clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+  echo  -e "\033[32m=> Oh my! oh-my-zsh is installed!\033[0m";
+fi
+
+# add the zsh shell from homebrew to /etc/shells if it doesn't exist
+if [ -f /usr/local/bin/zsh ] ; then
+  grep "/usr/local/bin/zsh" /etc/shells
+  if [ $? -ne 0 ] ; then
+    echo -e "\033[36m=> Adding /usr/local/bin/zsh to /etc/shells\033[0m";
+    sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
+  fi
+fi
+
+# change our shell to be zsh, use the latest one installed via homebrew if we can
+chsh -s `which zsh`

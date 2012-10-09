@@ -1,0 +1,94 @@
+" Author: <@gaahrdner>
+" Version: 0.0.1
+
+" required for vundle
+set nocompatible                  " disable vi compatibility
+filetype off 
+
+" Vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" General {{{
+Bundle 'scrooloose/syntastic'
+" }}}
+
+" Language Support {{{
+" . ruby {{{
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-rake'
+" . }}}
+
+" . misc {{{
+Bundle 'mutewinter/nginx.vim'
+" . }}}
+" }}}
+
+" Color schemes !!! {{{
+Bundle 'altercation/vim-colors-solarized'
+" }}}
+
+" vim-slime, for tmux magic
+Bundle 'jpalardy/vim-slime'
+
+" General {{{
+filetype plugin indent on         " Automatically detect file types, must be turned on after vundle
+syntax enable                     " Enable syntax highlighting
+try
+  colorscheme solarized
+catch
+endtry
+" }}}
+
+" Settings {{{
+set history=1000                  " size of the history buffer
+set pastetoggle=<F2>              " Set pastetoggle so we don't get auto indenting when pasting in a shit ton of text
+set autoread                      " reread the file if it was changed outside of vim
+set notimeout                     " don't timeout on mappings
+set ttimeout                      " timeout on terminal key codes
+set timeoutlen=100                " timeout after 100 ms
+
+" _ searching {{{
+set incsearch                     " show search matches as you type
+set hlsearch                      " highlight search results
+set ignorecase                    " case insensitive searches
+set smartcase                     " ignore case if search pattern is lower case, otherwise it is case sensitive
+set showmatch                     " show matches in parens
+" }}}
+
+" _ backups {{{
+set undodir=~/.vim/tmp/undo       " undo files
+set backupdir=~/.vim/tmp/backups  " backups
+set directory=~/.vim/tmp/swap     " swap files
+set backup 
+set noswapfile 
+" _ }}}
+
+" Formatting {{{
+" _ whitespace {{{
+set autoindent                    " always set autoindenting on
+set tabstop=2                     " a tab is two spaces
+set shiftwidth=2                  " and so is the autoindent
+set softtabstop=2                 " backspace treats 2 spaces like a tab
+set expandtab                     " insert space characters instead of tabs
+set shiftround                    " use multiple of shiftwidth when indenting with '<' and '>'
+" _ }}}
+
+" _ handle long lines {{{
+set textwidth=80                  " wrap at 80 characters
+set wrap                          " wrap lines at 80 chars
+set formatoptions=qrn1            "
+try
+  set colorcolumn=+1                " color column 81, so I know if a line is too long
+catch
+endtry
+" _ }}}
+" }}}
+" }}}
+
+" THANKS {{{
+" https://github.com/zaiste/vimified/blob/master/vimrc
+"}}}

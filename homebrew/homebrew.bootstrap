@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# Bail out if we don't have HomeBrew installed
+command -v brew >/dev/null 2>&1 || { echo >&2 "I require homebrew but it's not installed.  Aborting."; exit 1; }
+
+# latest
+brew update
+brew upgrade
+
+# Install core utilities
+brew install coreutils
+brew install findutils
+
+# Install wget with internationalized uri support
+brew install wget --enable-uri
+
+# colors!
+brew install grc
+
+# mysql
+brew install mysql
+
+# ruby goodness
+brew install rbenv
+brew install ruby-build
+brew install rbenv-bundler
+
+# 5.0.0 of zsh
+brew install zsh
+
+# mount ssh filesystems YEAH
+brew install fuse4x
+brew install sshfs
+
+# WHAT WHAT
+echo  -e "\033[31m=> DON'T FORGET TO RUN ALL POST-INSTALL COMMANDS !!!\033[0m";
