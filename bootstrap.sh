@@ -49,6 +49,8 @@ else
   info "downloading..."
   git clone --recursive git://github.com/gaahrdner/dotfiles.git ~/.dotfiles || { error "Download failed." ; exit 1 ; }
   cd ~/.dotfiles
+  git submodule init
+  git submodule update
   success ".dotfiles downloaded"
 
   info "installing..."
