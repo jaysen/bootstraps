@@ -38,6 +38,7 @@ Bundle 'jpalardy/vim-slime'
 filetype plugin indent on         " Automatically detect file types, must be turned on after vundle
 syntax enable                     " Enable syntax highlighting
 try
+  background=dark
   colorscheme solarized
 catch
 endtry
