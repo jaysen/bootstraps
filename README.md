@@ -12,8 +12,9 @@ These have only been tested on a 10.8.2 Retina Macbook Pro.
 
 ## Installation
 
-1. `curl -L https://github.com/gaahrdner/dotfiles/raw/master/bootstrap.sh | sh`
-2. Celebrate with an adult beverage of your choice.
+1. `curl -L https://github.com/gaahrdner/dotfiles/raw/master/bootstrap.sh | bash`
+2. Run `vim +BundleInstall +qall`
+3. Celebrate with an adult beverage of your choice.
 
 ## TODO
 
