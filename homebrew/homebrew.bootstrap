@@ -11,6 +11,9 @@ brew upgrade
 brew install coreutils
 brew install findutils
 
+# a better grep
+brew install ack
+
 # Install wget with internationalized uri support
 brew install wget --enable-uri
 

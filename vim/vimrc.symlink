@@ -13,6 +13,8 @@ Bundle 'gmarik/vundle'
 
 " General {{{
 Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
 " }}}
 
 " Language Support {{{
@@ -38,7 +40,7 @@ Bundle 'jpalardy/vim-slime'
 filetype plugin indent on         " Automatically detect file types, must be turned on after vundle
 syntax enable                     " Enable syntax highlighting
 try
-  background=dark
+  set background=dark
   colorscheme solarized
 catch
 endtry
