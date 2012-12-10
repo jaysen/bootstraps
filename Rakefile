@@ -61,7 +61,7 @@ namespace :install do
       l = link.split('/').last.gsub('.symlink','')
       target = "#{ENV['HOME']}/.#{l}"
 
-      if File.exists?(target)
+      if File.exists?(target) && !File.symlink?(target)
         `mv "#{target}" "#{target}.backup"`
         info "Backing up existing file #{target} to #{target}.backup"
       end

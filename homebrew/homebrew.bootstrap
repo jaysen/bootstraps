@@ -35,5 +35,8 @@ brew install zsh
 brew install fuse4x
 brew install sshfs
 
+# sometimes we have to deploy projects with maven
+brew install maven
+
 # WHAT WHAT
 echo  -e "\033[31m=> DON'T FORGET TO RUN ALL POST-INSTALL COMMANDS !!!\033[0m";
