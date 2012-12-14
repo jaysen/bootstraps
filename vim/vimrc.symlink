@@ -17,12 +17,32 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 " }}}
 
+" Snippets {{{
+Bundle 'garbas/vim-snipmate.git'
+Bundle 'snipmate-snippets'
+Bundle 'vim-addon-mw-utils'
+Bundle 'tlib'
+" }}}
+
 " Language Support {{{
+" . generic {{{
+Bundle 'tpope/vim-endwise'
+" . }}}
+
 " . ruby {{{
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
+Bundle 'skalnik/vim-vroom'
 " . }}}
+
+" . puppet {{{
+Bundle 'rodjek/vim-puppet.git'
+" . }}}
+
+" . html {{{
+Bundle 'tristen/vim-sparkup.git'
+" .}}}
 
 " . misc {{{
 Bundle 'mutewinter/nginx.vim'
@@ -53,6 +73,17 @@ set autoread                      " reread the file if it was changed outside of
 set notimeout                     " don't timeout on mappings
 set ttimeout                      " timeout on terminal key codes
 set timeoutlen=100                " timeout after 100 ms
+
+" _ folding {{{
+set foldmethod=syntax             " fold based on code syntax
+set foldnestmax=10                " deepest fold is 10 levels
+set nofoldenable                  " don't fold by default
+set foldlevel=1
+" _}}}
+
+" _ code {{{
+autocmd FileType ruby compiler ruby " Set the compilre to ruby for .rb files yo
+" _ }}}
 
 " _ searching {{{
 set incsearch                     " show search matches as you type
