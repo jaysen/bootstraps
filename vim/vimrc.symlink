@@ -49,8 +49,9 @@ Bundle 'mutewinter/nginx.vim'
 " . }}}
 " }}}
 
-" Color schemes !!! {{{
+" Colors {{{
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'AnsiEsc.vim'
 " }}}
 
 " vim-slime, for tmux magic
