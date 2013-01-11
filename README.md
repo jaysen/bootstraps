@@ -2,13 +2,16 @@
 
 Nothing special, you've probably seen similar dotfiles around the way.
 
-These have only been tested on a 10.8.2 Retina Macbook Pro.
+Tested with OS X 10.8.2
 
 ## Prerequisities
 
-* XCode Tools
-* Ruby
-* Vim (7.3+)
+* Run `usr/libexec/java_home --request`
+* XCode with command-line tools
+* homebrew
+* git installed via homebrew
+* ruby
+* vim (7.3+)
 
 ## Installation
 
